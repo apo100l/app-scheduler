@@ -1,0 +1,42 @@
+$green: #E5FFED;
+$red: #FFD8C2;
+$purple: #FBF0FF;
+.SchedulerLayer {
+  flex: 1 1 auto;
+  &_item {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    border-bottom: 1px solid #CDCDCD;
+    &:nth-child(4n + 4) {
+      border-bottom: 1px solid #000000;
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+    cursor: pointer;
+    &_selected {
+      background-color: $green;
+      &_used {
+        cursor: not-allowed;
+        background-color: $red !important;
+      }
+    }
+    &_used {
+      cursor: not-allowed;
+      background-color: $purple;
+      &:hover:not(.SchedulerLayer_item_selected_used) {
+        background-color: $purple !important;
+      }
+    }
+    &:hover,&.selected {
+      background-color: $green;
+    }
+    &_time {
+      display: flex;
+      padding: 1rem;
+      justify-content: center;
+    }
+  }
+}

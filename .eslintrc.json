@@ -1,0 +1,56 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true,
+        "project": "tsconfig.json"
+      },
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+  "extends": [
+    "plugin:prettier/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:import/recommended",
+    "plugin:react/recommended"
+  ],
+  "plugins": ["@typescript-eslint", "react-hooks", "jsx-a11y", "import", "prettier", "react"],
+  "rules": {
+    "import/no-unresolved": "error",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "react/prop-types": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "import/prefer-default-export": "off",
+    "react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }],
+    "@typescript-eslint/explicit-function-return-type": [
+      "error",
+      {
+        "allowExpressions": true
+      }
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      },
+      { "usePrettierrc": true }
+    ]
+  },
+  "ignorePatterns": ["config-overrides.js"]
+}

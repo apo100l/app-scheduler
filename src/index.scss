@@ -1,0 +1,31 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+#root {
+  height: 100%;
+  width: 100%;
+}
+div.Cell {
+  &-dayView {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+.MainLayout-relativeContainer {
+  .Cell {
+    &-cell {
+      cursor: pointer;
+      &:hover, &:active {
+        background-color: aquamarine !important;
+      }
+      &.selected {
+        background-color: aquamarine !important;
+      }
+    }
+  }
+}
+
